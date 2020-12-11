@@ -16,23 +16,30 @@ class Timer {
     }
 
     start = () => {
-        if (this.onStart) {
+        /* if (this.onStart) {
             this.onStart()
-        }
+        } */
         this.interval = setInterval(this.tick, 1000);
     }
 
     tick = () => {
-        if (this.onTick) {
-            this.onTick();
+        /*  if (this.onTick) {
+             this.onTick();
+         } */
+        if (this.timeRemaining <= 0) {
+            this.pause();
+        } else {
+            // on the right timeRemaining we are calling the getter to get a value, and we are calling the setter on the left timeRemaining to set a value, even though we don't have parentheses
+            // timeRemaining acts as an instance variable 
+            this.timeRemaining = this.timeRemaining - 1;
         }
         console.log('test test');
     }
 
     pause = () => {
-        if (this.onComplete) {
-            this.onComplete();
-        }
+        /*  if (this.onComplete) {
+             this.onComplete();
+         } */
         clearInterval(this.interval);
     }
 
