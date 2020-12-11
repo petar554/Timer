@@ -20,4 +20,12 @@ class Timer {
     pause = () => {
         clearInterval(this.interval);
     }
+
+    get timeRemaining() {
+        return parseFloat(this.durationInput.value);
+    }
+
+    set timeRemaining(time) {
+        this.durationInput.value = time.toFixed(2);
+    }
 }
