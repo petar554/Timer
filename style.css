@@ -12,13 +12,34 @@ body {
   height: 400px;
 }
 
+.timer {
+  position: relative;
+  display: inline-block;
+}
+
+/* contrls are positioned absolute to the timer */
+.controls {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .timer input {
   display: block;
   border: none;
+  text-align: center;
+  font-size: 90px;
+  width: 240px;
 }
 
 .timer button {
   border: none;
-  font-size: 20px;
+  font-size: 40px;
   cursor: pointer;
 }
