@@ -22,7 +22,7 @@ class Timer {
         if (this.onStart) {
             this.onStart(this.timeRemaining);
         }
-        this.interval = setInterval(this.tick, 1000);
+        this.interval = setInterval(this.tick, 100);
     }
 
     tick = () => {
@@ -37,7 +37,7 @@ class Timer {
         } else {
             // on the right timeRemaining we are calling the getter to get a value, and we are calling the setter on the left timeRemaining to set a value, even though we don't have parentheses
             // timeRemaining acts as an instance variable 
-            this.timeRemaining = this.timeRemaining - 1;
+            this.timeRemaining = this.timeRemaining - .05;
             if (this.onTick) {
                 this.onTick(this.timeRemaining);
             }
